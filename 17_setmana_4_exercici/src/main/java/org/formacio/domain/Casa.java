@@ -1,16 +1,25 @@
 package org.formacio.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="t_cases")
 public class Casa {
 
 	/**
 	 * Casa ha d'emprar l'estrategia per l'id IDENTITY
 	 */
-	
+	@Id
+	@Column(name="cas_id")
     private Long id;
 	
+	@Column(name="cas_adreca")
 	private String adreca;
 	
+	@Column(name="cas_municipi")
 	private Municipi municipi;
 
 	public Long getId() {
