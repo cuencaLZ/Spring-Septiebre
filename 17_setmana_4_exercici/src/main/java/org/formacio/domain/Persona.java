@@ -5,17 +5,21 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="t_persones")
+@SequenceGenerator(name="sequencia_persones", sequenceName="seq_persona")
 public class Persona {
 
 	/*
 	 * Persona ha d'emprar la sequencia SEQ_PERSONA per els ids
 	 */
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sequencia_persones")
 	@Column(name="per_id")
 	private Long id;
 	

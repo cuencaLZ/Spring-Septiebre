@@ -2,6 +2,8 @@ package org.formacio.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,7 +14,7 @@ public class Casa {
 	/**
 	 * Casa ha d'emprar l'estrategia per l'id IDENTITY
 	 */
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cas_id")
     private Long id;
 	
